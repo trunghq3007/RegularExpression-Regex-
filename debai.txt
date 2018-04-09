@@ -1,0 +1,10 @@
+Username Validation Chúng ta cần kiểm tra chuối string input nhập vào, là uername hay không, nếu là uername nó cần thỏa mãn các điều kiện sau:
+Có từ 3 - 5 kí tự
+Bao gồm các kí tự thường a -> z
+các chữ số 0 - 9 và một số kí tự đặc biệt: "_", "-", "."
+Pattern được sử dụng là: ^[a-z0-9._-]{3,15}$$
+
+^ : bắt đầu chuỗi
+[a-z0-9._-] Check kí tự xuất hiện trong chuỗi là a-z, 0-9, _, - hoặc .
+{3,15} : có từ 3 - 15 kí tự
+$$: kết thúc chuỗi
