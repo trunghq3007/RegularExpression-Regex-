@@ -8,3 +8,18 @@ Pattern được sử dụng là: ^[a-z0-9._-]{3,15}$$
 [a-z0-9._-] Check kí tự xuất hiện trong chuỗi là a-z, 0-9, _, - hoặc .
 {3,15} : có từ 3 - 15 kí tự
 $$: kết thúc chuỗi
+
+
+Password Complexity Validation Điều kiện để chuỗi đầu vào là password cần thỏa mãn các điều kiện sau:
+Có độ dài từ 6 - 15 kí tự
+Có ít nhất 1 kí tự thường, 1 kí tự viết hoa và 1 chữ số
+Có 1 trong các kí tự đặc biệt sau (! # $$@ _ + , ? . - )
+Pattern được sử dụng là: ((?=.d)(?=.[a-z])(?=.[A-Z])(?=.[!.#$$_+,?-]).{8,50})
+
+( Start of group
+(?=.*d) must contains one digit from 0-9
+(?=.*[a-z]) must contains one lowercase characters
+(?=.*[A-Z]) must contains one uppercase characters
+(?=.*[!.#@_+,?-]) must contains one special symbols in the list "!.#@_+,?-" . match anything with previous condition checking
+{8,50} length at least 8 characters and maximum of 50
+) End of group
